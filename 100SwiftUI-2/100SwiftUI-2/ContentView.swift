@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var isHearted = false
+    @State private var likedNumber = 999
+    
     var body: some View {
         ZStack {
             Image("food")
@@ -24,11 +28,33 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .padding(.leading, 30)
                     Spacer()
-                    Image(systemName: "heart.fill")
-                        .font(.system(size: 30))
+                    
+                    Button(action: {
+                        self.isHearted.toggle()
+                        if self.isHearted {
+                            self.likedNumber += 1
+                        } else {
+                            self.likedNumber -= 1
+                        }
+                    }) {
+                        if isHearted {
+                            Image(systemName: "heart.fill")
+                                .font(.system(size: 20))
+                                .opacity(0.9)
+                                .foregroundColor(.white)
+                        } else {
+                            Image(systemName: "heart")
+                                .font(.system(size: 20))
+                                .opacity(0.9)
+                                .foregroundColor(.white)
+                        }
+                    }
+                    
+                    Text(String(self.likedNumber))
                         .opacity(0.9)
                         .foregroundColor(.white)
                         .padding(.trailing, 30.0)
+                    
                 }
                 Spacer()
                 Text("Spicy Hot Pot is a common type of Chinese street food.")
