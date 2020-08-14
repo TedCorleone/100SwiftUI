@@ -24,8 +24,6 @@ struct ContentView: View {
                 HStack {
                     Text("Spicy Hot Pot")
                         .font(.system(size: 30))
-                        .opacity(0.9)
-                        .foregroundColor(.white)
                         .padding(.leading, 30)
                     Spacer()
                     
@@ -40,28 +38,24 @@ struct ContentView: View {
                         if isHearted {
                             Image(systemName: "heart.fill")
                                 .font(.system(size: 20))
-                                .opacity(0.9)
-                                .foregroundColor(.white)
                         } else {
                             Image(systemName: "heart")
                                 .font(.system(size: 20))
-                                .opacity(0.9)
-                                .foregroundColor(.white)
                         }
                     }
                     
                     Text(String(self.likedNumber))
-                        .opacity(0.9)
-                        .foregroundColor(.white)
-                        .padding(.trailing, 30.0)
+                       .padding(.trailing, 30.0)
                     
-                }
+                }.opacity(0.9).foregroundColor(.white)
+                
                 Spacer()
+                
                 Text("Spicy Hot Pot is a common type of Chinese street food.")
                     .font(.system(size: 13))
                     .opacity(0.8)
                     .foregroundColor(Color.white)
-                
+                    .padding(.bottom, 20)
             }
         }
     }
