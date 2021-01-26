@@ -10,7 +10,7 @@ var body: some View {
             self.isPresented.toggle()
         }
         .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView.init)
-    }
+}
 </code></pre>
 
 <br>
